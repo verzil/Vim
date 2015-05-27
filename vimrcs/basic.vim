@@ -59,7 +59,7 @@ let mapleader = "/<Space>"
 let g:mapleader = "/<Space>"
 
 " Fast saving
-nmap <leader>w :w!<cr>
+nnoremap <leader>w :w!<cr>
 
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
@@ -215,9 +215,9 @@ vnoremap <silent> # :call VisualSelection('b', '')<CR>
 map j gj
 map k gk
 
-" Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-map <space><space> /
-map <c-space> ?
+" Map <space><space> to / (search) and Ctrl<space> to ? (backwards search)
+nnoremap <space><space> /
+nnoremap <c-space> ?
 
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
