@@ -147,7 +147,7 @@ set foldcolumn=1
 syntax enable
 
 try
-    colorscheme desert
+    colorscheme zacks
 catch
 endtry
 
@@ -435,3 +435,4 @@ endfunction
 :imap jj <Esc>
 :let mapleader = "\<Space>"
 :map \r :action ReformatCode<CR>
+colo zacks
