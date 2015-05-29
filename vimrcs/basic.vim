@@ -431,8 +431,9 @@ function! <SID>BufcloseCloseIt()
 endfunction
 
 " added new binding for self
-:inoremap <C-j> <Esc>/[)}"'\]>]<CR>:nohl<CR>a
+:inoremap <space><tab> <Esc>/[)}"'\]>]<CR>:nohl<CR>a
 :imap jj <Esc>
 :let mapleader = "\<Space>"
 :map \r :action ReformatCode<CR>
-colo zacks
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
