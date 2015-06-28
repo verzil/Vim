@@ -477,4 +477,9 @@ endfunction
 :imap jj <Esc>
 :let mapleader = "\<Space>"
 :map \r :action ReformatCode<CR>
+<<<<<<< HEAD
 
+=======
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
+>>>>>>> d2cd0af8f43c200da4c83d49f9d06e999bc7f610
