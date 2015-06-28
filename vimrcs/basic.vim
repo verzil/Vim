@@ -38,7 +38,8 @@
 "    -> Helper functions
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
+let g:ycm_server_keep_logfiles = 1
+let g:ycm_server_log_level = 'debug'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -46,6 +47,7 @@
 " Sets how many lines of history VIM has to remember
 set history=700
 
+let g:ycm_global_ycm_extra_conf = "C:/User/YanZ/.vim_runtime/sources_non_forked/YouCompleteMe/.ycm_extra_conf.py"
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
@@ -58,6 +60,10 @@ set autoread
 let mapleader = "/<Space>"
 let g:mapleader = "/<Space>"
 
+" Cursor to reflect on the current mode insert/normal
+:autocmd InsertEnter, InsertLeave * set cul!
+
+
 " Fast saving
 nnoremap <leader>w :w!<cr>
 
@@ -65,7 +71,44 @@ nnoremap <leader>w :w!<cr>
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
 
+"Setting color to xterm
 
+set term=xterm
+set t_Co=256
+let &t_AB="\e[48;5;%dm"
+let &t_AF="\e[38;5;%dm"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => VUNDLE
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vundle setups
+" Vundle Script
+set nocompatible              " be iMproved, required
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim_runtime/sources_non_forked/Vundle.vim/
+let path='~/.vim_runtime/sources_non_forked'
+call vundle#begin(path)
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+ "
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -76,7 +119,6 @@ set so=7
 let $LANG='en'
 set langmenu=en
 source $VIMRUNTIME/delmenu.vim
-source $VIMRUNTIME/menu.vim
 
 " Turn on the WiLd menu
 set wildmenu
@@ -147,11 +189,11 @@ set foldcolumn=1
 syntax enable
 
 try
-    colorscheme zacks
+    colorscheme darkblue
 catch
 endtry
 
-set background=dark
+set background=light
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -431,8 +473,8 @@ function! <SID>BufcloseCloseIt()
 endfunction
 
 " added new binding for self
-:inoremap <C-j> <Esc>/[)}"'\]>]<CR>:nohl<CR>a
+:inoremap <space><tab> <Esc>/[)}"'\]>]<CR>:nohl<CR>a
 :imap jj <Esc>
 :let mapleader = "\<Space>"
 :map \r :action ReformatCode<CR>
-colo zacks
+
