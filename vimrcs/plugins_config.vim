@@ -111,6 +111,20 @@ let g:goyo_margin_top = 2
 let g:goyo_margin_bottom = 2
 nnoremap <silent> <leader>z :Goyo<cr>
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Easy motion
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <Leader>w <Plug>(easymotion-w)
+map <Leader>b <Plug>(easymotion-b)
+map <Leader>, <Plug>(easymotion-f)
+map <Leader>. <Plug>(easymotion-F)
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+nmap s<Plug>(easymotion-s)
+let g:EasyMotion_smartcase = 1
+
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Syntastic (syntax checker)

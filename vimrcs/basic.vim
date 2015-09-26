@@ -73,8 +73,6 @@ command W w !sudo tee % > /dev/null
 
 "Setting color to xterm
 
-set term=xterm
-set t_Co=256
 let &t_AB="\e[48;5;%dm"
 let &t_AF="\e[38;5;%dm"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -82,8 +80,6 @@ let &t_AF="\e[38;5;%dm"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle setups
 " Vundle Script
-set nocompatible              " be iMproved, required
-set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -92,6 +88,10 @@ let path='~/.vim_runtime/sources_non_forked'
 call vundle#begin(path)
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
+Plugin 'edkolev/tmuxline.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'rdnetto/YCM-Generator'
+Plugin 'easymotion/vim-easymotion'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -477,9 +477,6 @@ endfunction
 :imap jj <Esc>
 :let mapleader = "\<Space>"
 :map \r :action ReformatCode<CR>
-<<<<<<< HEAD
 
-=======
 autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
->>>>>>> d2cd0af8f43c200da4c83d49f9d06e999bc7f610
